@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +20,6 @@ class MainActivity : AppCompatActivity() {
         initObservers()
     }
 
-    /**
-     * don't use long functions with multi responsibilities in your code
-     * we did this here for checking task result only
-     */
     private fun initObservers() {
         //TODO: uncomment any line to check its result
 
@@ -32,8 +28,6 @@ class MainActivity : AppCompatActivity() {
 //        RXJavaTasks.task3().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 //        RXJavaTasks.task4().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 //        RXJavaTasks.task5().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
-//        RXJavaTasks.task6().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
-//        RXJavaTasks.task7().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 
     }
 
