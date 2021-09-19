@@ -43,7 +43,6 @@ object RXJavaTasks {
 
     /**
      * add the required operators to emit data from 21 to 80 only
-     * let it emit characters form A to Z each 1 second
      */
     fun task4(): Observable<Int> {
         return Observable.range(1,100)
