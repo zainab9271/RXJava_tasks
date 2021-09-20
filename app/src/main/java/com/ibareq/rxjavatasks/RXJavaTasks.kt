@@ -47,7 +47,7 @@ object RXJavaTasks {
      * add the required operators to emit data from 21 to 80 only
      */
     fun task4(): Observable<Int> {
-        return Observable.range(1,100)
+        return Observable.range(1,100).filter { it in (21..80) }
             .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
     }
 
