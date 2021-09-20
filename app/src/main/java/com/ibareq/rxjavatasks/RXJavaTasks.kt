@@ -36,12 +36,12 @@ object RXJavaTasks {
      * fix the error in mergeWith without replace the operator
      * don't alter or edit the first two lines inside the function
      */
-//    fun task3(): Observable<String> {
-//        val firstObservable = Observable.just("A", "B", "C", "D", "E")
-//        val secondObservable = Observable.range(1,5)
-//        return firstObservable.mergeWith(secondObservable)
-//            .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
-//    }
+    fun task3(): Observable<String> {
+        val firstObservable = Observable.just("A", "B", "C", "D", "E")
+        val secondObservable = Observable.range(1,5)
+        return firstObservable.mergeWith(secondObservable.map { it.toString() })
+            .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
+    }
 
     /**
      * add the required operators to emit data from 21 to 80 only
