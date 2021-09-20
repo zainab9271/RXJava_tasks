@@ -17,7 +17,9 @@ object RXJavaTasks {
      * let it emit characters form A to Z each 1 second
      */
     fun task1(): Observable<String> {
-        return Observable.
+        val charList = ('A'..'Z').asIterable().map{ it.toString() }
+        val subObservable = Observable.interval(1, TimeUnit.SECONDS)
+        return Observable.fromIterable(charList).zipWith(subObservable, { t1, _ -> t1 })
     }
 
     /**
@@ -34,12 +36,12 @@ object RXJavaTasks {
      * fix the error in mergeWith without replace the operator
      * don't alter or edit the first two lines inside the function
      */
-    fun task3(): Observable<String> {
-        val firstObservable = Observable.just("A", "B", "C", "D", "E")
-        val secondObservable = Observable.range(1,5)
-        return firstObservable.mergeWith(secondObservable)
-            .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
-    }
+//    fun task3(): Observable<String> {
+//        val firstObservable = Observable.just("A", "B", "C", "D", "E")
+//        val secondObservable = Observable.range(1,5)
+//        return firstObservable.mergeWith(secondObservable)
+//            .zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
+//    }
 
     /**
      * add the required operators to emit data from 21 to 80 only
@@ -52,11 +54,11 @@ object RXJavaTasks {
     /**
      * let your observable emit these items: A1, B2, C3, D4, E5
      */
-    fun task5(): Observable<String> {
-        val firstObservable = Observable.just("A", "B", "C", "D", "E").zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
-        val secondObservable = Observable.range(1,5).zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
-
-        return Observable.
-    }
+//    fun task5(): Observable<String> {
+//        val firstObservable = Observable.just("A", "B", "C", "D", "E").zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
+//        val secondObservable = Observable.range(1,5).zipWith(Observable.interval(300, TimeUnit.MILLISECONDS), {item, _ -> item})
+//
+//        return Observable.
+//    }
 
 }

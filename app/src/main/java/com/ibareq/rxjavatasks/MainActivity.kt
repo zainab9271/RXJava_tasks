@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private fun initObservers() {
         //TODO: uncomment any line to check its result
 
-//        RXJavaTasks.task1().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
+        RXJavaTasks.task1().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 //        RXJavaTasks.task2().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 //        RXJavaTasks.task3().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
 //        RXJavaTasks.task4().observeOn(AndroidSchedulers.mainThread()).subscribe(::updateText).addTo(compositeDisposable)
